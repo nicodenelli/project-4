@@ -12,10 +12,10 @@ import {
   import userService from "../../utils/userService";
   import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 
-  import { useNavigate } from "react-router-dom";
+//   import { useNavigate } from "react-router-dom";
   // this is a hook that allows us to programatically navigate to a different route
 
-  const navigate = useNavigate()
+//   const navigate = useNavigate()
   
   export default function Signup({handleSignUpOrLogin}) {
   
@@ -65,7 +65,7 @@ import {
   
           await userService.signup(formData);
       handleSignUpOrLogin(); // this updates the state in the app with the correct token from localstorage
-      navigate('/'); // this programmatically navigates the client to the home page
+    //   navigate('/'); // this programmatically navigates the client to the home page
   
       } catch(err){
           console.log(err.message, ' this is the error singnup up')
@@ -79,7 +79,7 @@ import {
       <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
         <Grid.Column style={{ maxWidth: 450 }}>
             <Header as="h2" color="purple" textAlign="center">
-            <Image src="https://i.imgur.com/TM4eA5g.jpg" /> Sign Up
+            <Image src="https://imgur.com/a/iZVgx33" /> Sign Up
           </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
             <Segment stacked>
@@ -118,7 +118,7 @@ import {
                 label="bio"
                 name="bio"
                 value={state.bio}
-                placeholder="Tell us more about your dogs..."
+                placeholder="Tell us something about your relationship with Hockey!"
                 onChange={handleChange}
               />
               <Form.Field>
