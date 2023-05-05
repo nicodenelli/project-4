@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import { useState } from "react";
@@ -19,7 +19,6 @@ export default function App() {
     setUser(userService.getUser())
   }
 
-    // are we logged in?
     return (
       <Routes>
         <Route
