@@ -6,10 +6,10 @@ function PageHeader({ loggedUser, handleLogout }) {
     <Segment clearing>
       <Header as="h2" floated="right">
         <Link to="/">
-          <Icon name="home"></Icon>
+          <Icon name="home" className="profile-bio-span"></Icon>
         </Link>
-        <Link to="" onClick={handleLogout}>
-          Logout
+        <Link to="" onClick={handleLogout}><span className="profile-bio-span">
+          Logout</span>
         </Link>
       </Header>
       <Header as="h2" floated="left">

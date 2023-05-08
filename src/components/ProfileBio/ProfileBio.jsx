@@ -15,7 +15,7 @@ export default function ProfileBio({ user }) {
             src={`${
               user.photoSrc
                 ? user.photoSrc
-                : "https://react.semantic-ui.com/images/wireframe/square-image.png"
+                : "https://i.imgur.com/sP26kFn.png"
             } `}
             avatar
             size="small"
@@ -23,10 +23,10 @@ export default function ProfileBio({ user }) {
         </Grid.Column>
         <Grid.Column textAlign="left" style={{ maxWidth: 450 }}>
           <Segment vertical>
-            <h3>{user.username}</h3>
+            <h3><span className="profile-bio-span">{user.username}</span></h3>
           </Segment>
           <Segment>
-            <span className="profile-bio-span"> Bio: {user.description}</span>
+            <span className="profile-bio-span"> Profile Bio: {user.description}</span>
           </Segment>
         </Grid.Column>
       </Grid.Row>
