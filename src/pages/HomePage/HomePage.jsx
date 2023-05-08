@@ -7,14 +7,15 @@ import { Grid } from "semantic-ui-react";
 
 // this will import all the functions from postApi, and attach to an object call postsApi
 import * as postsApi from "../../utils/postApi";
+import * as favoritesApi from '../../utils/favoritesApi';
 
 
 export default function HomePage({loggedUser, handleLogout}) {
-  const [posts, setPosts] = useState([]); /// array of objects, the posts contain the likes
+  const [posts, setPosts] = useState([]); /// array of objects, the posts contain the favorites
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   // (C)RUD Create
-  // we will call this function in our AddPuppyForm handleSubmit,
+  // we will call this function in our HockeyForm handleSubmit,
   // this way when we get a response from the server, we can update our state
   async function handleAddPost(post) {
     // post is the formData from HockeyForm
@@ -48,6 +49,35 @@ export default function HomePage({loggedUser, handleLogout}) {
     }
   }
 
+  async function addFavorite(postId){
+	// postId will be passed in when we click on a heart in Card component!
+	try {
+		const data = await favoritesApi.create(postId);
+		// after we create a favorite
+		// lets fetch all the posts again, to get the updated posts with the favorite 
+		// embedded, and getPosts, will update the posts state so our ui will rerender
+		// and we will see the heart change to red
+		getPosts()
+
+
+	} catch(err){
+		console.log(err, ' error in addFavorite')
+	}
+  }
+
+  async function removeFavorite(favoriteId){
+	try {
+		// favoriteId will be passed in when we click on heart that is red in the 
+		// Card component
+		const data = await favoritesApi.removeFavorite(favoriteId);
+		// then we will call getPosts to refresh the data, and have an updated post without the favorite
+		getPosts()
+
+	} catch(err){
+		console.log(err, ' err in removeFavorite')
+	}
+  }
+
   useEffect(() => {
     getPosts();
   }, []);
@@ -78,6 +108,8 @@ export default function HomePage({loggedUser, handleLogout}) {
             numPhotosCol={1}
             isProfile={false}
 			loggedUser={loggedUser}
+            addFavorite={addFavorite}
+            removeFavorite={removeFavorite}
           />
         </Grid.Column>
       </Grid.Row>

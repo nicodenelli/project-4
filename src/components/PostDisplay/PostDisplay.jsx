@@ -8,7 +8,9 @@ export default function PostDisplay({
   numPhotosCol,
   isProfile,
   loading,
-  loggedUser
+  loggedUser,
+  addFavorite,
+  removeFavorite
 }) {
   if (loading) {
     return (
@@ -22,7 +24,7 @@ export default function PostDisplay({
         <Card.Group itemsPerRow={numPhotosCol} stackable>
           {posts.map((post) => {
             return (
-              <PostCard post={post} key={post._id} isProfile={isProfile} loggedUser={loggedUser}/>
+              <PostCard post={post} key={post._id} isProfile={isProfile} loggedUser={loggedUser} addFavorite={addFavorite} removeFavorite={removeFavorite}/>
             );
           })}
         </Card.Group>
@@ -33,7 +35,7 @@ export default function PostDisplay({
   return (
     <Card.Group itemsPerRow={numPhotosCol} stackable>
       {posts.map((post) => {
-        return <PostCard post={post} key={post._id} isProfile={isProfile} loggedUser={loggedUser}/>;
+        return <PostCard post={post} key={post._id} isProfile={isProfile} loggedUser={loggedUser} addFavorite={addFavorite} removeFavorite={removeFavorite}/>;
       })}
     </Card.Group>
   );

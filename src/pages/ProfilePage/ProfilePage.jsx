@@ -11,6 +11,7 @@ import Loader from "../../components/Loader/Loader";
 // that makes the api call to the backend (express app) in order to get the users
 // information
 import userService from "../../utils/userService";
+import * as favoritesApi from '../../utils/favoritesApi';
 
 export default function ProfilePage({loggedUser, handleLogout}) {
   const [posts, setPosts] = useState([]);
@@ -43,6 +44,30 @@ export default function ProfilePage({loggedUser, handleLogout}) {
 	} catch (err) {
 	  console.log("error from get profile ->", err);
 	  setError("Profile does not exist");
+	}
+  }
+
+  async function addFavorite(postId){
+	try {
+		const data = await favoritesApi.create(postId);
+
+		getProfile()
+
+	} catch(err){
+		console.log(err, ' error in addFavorite')
+	}
+  }
+
+  async function removeFavorite(favoriteId){
+	try {
+		// likeId will be passed in when we click on heart that is red in the 
+		// Card component
+		const data = await favoritesApi.removeFavorite(favoriteId);
+		// then we will call getProfile to refresh the data, and have an updated post without the like
+		getProfile()
+
+	} catch(err){
+		console.log(err, ' err in removeFavorite')
 	}
   }
 
@@ -85,6 +110,8 @@ export default function ProfilePage({loggedUser, handleLogout}) {
             numPhotosCol={3}
             isProfile={true}
 			loggedUser={loggedUser}
+            addFavorite={addFavorite}
+            removeFavorite={removeFavorite}
 			/>
         </Grid.Column>
       </Grid.Row>

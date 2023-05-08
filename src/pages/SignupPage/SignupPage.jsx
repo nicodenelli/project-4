@@ -1,4 +1,3 @@
-
 import {
     Button,
     Form,
@@ -9,15 +8,16 @@ import {
   } from "semantic-ui-react";
 
   import { useNavigate } from "react-router-dom";
+  // this is a hook that allows us to programatically navigate to a different route
   
   import { useState } from "react";
   import userService from "../../utils/userService";
   import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 
-//   import { useNavigate } from "react-router-dom";
-  // this is a hook that allows us to programatically navigate to a different route
 
-//   const navigate = useNavigate()
+
+
+
   
   export default function Signup({handleSignUpOrLogin}) {
   
