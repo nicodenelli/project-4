@@ -6,6 +6,7 @@ import { useState } from "react";
 import HomePage from './pages/HomePage/HomePage';
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from './pages/SignupPage/SignupPage';
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 import userService from './utils/userService';
 
@@ -41,6 +42,12 @@ export default function App() {
         <Route
           path="/signup"
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        />
+        <Route
+          path="/:username"
+          element={
+            <ProfilePage loggedUser={user} handleLogout={handleLogout} />
+          }
         />
       </Routes>
     );

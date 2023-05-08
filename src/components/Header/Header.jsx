@@ -18,7 +18,7 @@ function PageHeader({ loggedUser, handleLogout }) {
             src={
               loggedUser?.photoUrl
                 ? loggedUser?.photoUrl
-                : "https://react.semantic-ui.com/images/wireframe/square-image.png"
+                : "https://i.imgur.com/sP26kFn.png"
             }
             avatar
           ></Image>

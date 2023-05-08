@@ -7,6 +7,8 @@ import {
     Image,
     Segment,
   } from "semantic-ui-react";
+
+  import { useNavigate } from "react-router-dom";
   
   import { useState } from "react";
   import userService from "../../utils/userService";
@@ -31,6 +33,8 @@ import {
     const [selectedFile, setSelectedFile] = useState('')
   
     const [error, setError] = useState("");
+
+    const navigate = useNavigate();
   
     function handleChange(e) {
       setState({
@@ -65,7 +69,7 @@ import {
   
           await userService.signup(formData);
       handleSignUpOrLogin(); // this updates the state in the app with the correct token from localstorage
-    //   navigate('/'); // this programmatically navigates the client to the home page
+      navigate('/'); // this programmatically navigates the client to the home page
   
       } catch(err){
           console.log(err.message, ' this is the error singnup up')

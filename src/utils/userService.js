@@ -39,9 +39,22 @@ function login(creds) {
   );
 }
 
+function getProfile(username) {
+  return fetch(BASE_URL + username, {
+    headers: {
+      // make sure to send over the jwt token to identify who is making the request
+      Authorization: "Bearer " + tokenService.getToken(),
+    }
+  }).then((res) => {
+    if (res.ok) return res.json();
+    throw new Error("Error from getProfile request, check the server terminal");
+  });
+}
+
 export default {
   signup, 
   getUser,
   logout,
-  login
+  login,
+  getProfile
 };
