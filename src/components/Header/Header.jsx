@@ -16,8 +16,8 @@ function PageHeader({ loggedUser, handleLogout }) {
         <Link to={`/${loggedUser?.username}`}>
           <Image
             src={
-              loggedUser?.photoUrl
-                ? loggedUser?.photoUrl
+              loggedUser?.photoSrc
+                ? loggedUser?.photoSrc
                 : "https://i.imgur.com/sP26kFn.png"
             }
             avatar

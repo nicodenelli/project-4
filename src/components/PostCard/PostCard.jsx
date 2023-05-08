@@ -16,9 +16,9 @@ export default function PostCard({ post, isProfile, loggedUser }) {
                 size="large"
                 avatar
                 src={
-                  post.user.photoUrl
-                    ? post.user.photoUrl
-                    : "https://react.semantic-ui.com/images/wireframe/square-image.png"
+                  post.user.photoSrc
+                    ? post.user.photoSrc
+                    : "https://i.imgur.com/sP26kFn.png"
                 }
               />
               {post.user.username}
@@ -26,7 +26,7 @@ export default function PostCard({ post, isProfile, loggedUser }) {
           </Card.Header>
         </Card.Content>
       )}
-      <Image src={`${post?.photoUrl}`} wrapped ui={false} />
+      <Image src={`${post?.photoSrc}`} wrapped ui={false} />
       <Card.Content>
         <Card.Description>{post.caption}</Card.Description>
       </Card.Content>
