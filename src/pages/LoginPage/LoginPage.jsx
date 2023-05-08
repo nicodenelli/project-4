@@ -56,7 +56,7 @@ export default function LoginPage(props) {
     >
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" color="purple" textAlign="center">
-          <Image src="https://i.imgur.com/TM4eA5g.jpg" /> Log-in to your account
+          <Image src="https://i.imgur.com/sP26kFn.png" /> Log-in to your account
         </Header>
         <Form onSubmit={handleSubmit}>
           <Segment stacked>

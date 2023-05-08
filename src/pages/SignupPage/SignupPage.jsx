@@ -79,7 +79,7 @@ import {
       <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
         <Grid.Column style={{ maxWidth: 450 }}>
             <Header as="h2" color="purple" textAlign="center">
-            <Image src="https://imgur.com/a/iZVgx33" /> Sign Up
+            <Image src="https://i.imgur.com/sP26kFn.png" /> Sign Up
           </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
             <Segment stacked>

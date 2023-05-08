@@ -19,11 +19,11 @@ function create(req, res){
 
     console.log(req.body, req.file, req.user)
 
-    const filePath = `project-hockey/posts/${uuidv4()}-${req.file.originalname}}`
+    const filePath = `project4/posts/${uuidv4()}-${req.file.originalname}}`
     const params = {Bucket: BUCKET_NAME, Key: filePath, Body: req.file.buffer}; // Body is the Image
 
     s3.upload(params, async function(err, data){
-        
+
         if(err){
             console.log("===============")
             console.log(err, " err from aws, could be your BUCKET_NAME or Keys are incorrect");

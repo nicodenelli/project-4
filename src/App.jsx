@@ -1,9 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 
 import { useState } from "react";
 
-// import HomePage from './pages/HomePage/HomePage';
+import HomePage from './pages/HomePage/HomePage';
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from './pages/SignupPage/SignupPage';
 
@@ -19,19 +19,21 @@ export default function App() {
     setUser(userService.getUser())
   }
 
+
   function handleLogout() {
 
     console.log('being called')
     userService.logout();
     setUser(null);
   }
-
+  if (user) {
+    // are we logged in?
     return (
       <Routes>
-        {/* <Route
+        <Route
           path="/"
           element={<HomePage loggedUser={user} handleLogout={handleLogout} />}
-        /> */}
+        />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
@@ -42,5 +44,20 @@ export default function App() {
         />
       </Routes>
     );
+}
+
+  return (
+    <Routes>
+      <Route
+        path="/login"
+        element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+      />
+      <Route
+        path="/signup"
+        element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+      />
+      <Route path="/*" element={<Navigate to="/login" />} />
+    </Routes>
+  );
 }
 
