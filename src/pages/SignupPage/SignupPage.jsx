@@ -20,6 +20,8 @@ import {
 
   
   export default function Signup({handleSignUpOrLogin}) {
+
+    const navigate = useNavigate()
   
     const [state, setState] = useState({
       username: "",
@@ -33,8 +35,6 @@ import {
     const [selectedFile, setSelectedFile] = useState('')
   
     const [error, setError] = useState("");
-
-    const navigate = useNavigate();
   
     function handleChange(e) {
       setState({
@@ -119,9 +119,9 @@ import {
                 required
               />
               <Form.TextArea
-                label="bio"
-                name="bio"
-                value={state.bio}
+                label="description"
+                name="description"
+                value={state.description}
                 placeholder="Tell us something about your relationship with Hockey!"
                 onChange={handleChange}
               />

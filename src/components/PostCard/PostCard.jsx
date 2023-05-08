@@ -32,14 +32,14 @@ export default function PostCard({ post, isProfile, loggedUser, addFavorite, rem
                     : "https://i.imgur.com/sP26kFn.png"
                 }
               />
-              {post.user.username}
+              <span className="profile-bio-span">{post.user.username}</span>
             </Link>
           </Card.Header>
         </Card.Content>
       )}
       <Image src={`${post?.photoSrc}`} wrapped ui={false} />
       <Card.Content>
-        <Card.Description>{post.caption}</Card.Description>
+        <Card.Description><span className="profile-bio-span">{post.caption}</span></Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
         <Icon
@@ -48,7 +48,7 @@ export default function PostCard({ post, isProfile, loggedUser, addFavorite, rem
           color={favoriteColor}
           onClick={clickHandler}
         />
-        {post.favorites.length} Favorites
+        <span className="profile-bio-span">{post.favorites.length} Favorites</span>
       </Card.Content>
     </Card>
   );
