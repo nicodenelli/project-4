@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Header, Segment, Image, Icon } from "semantic-ui-react";
 
-function PageHeader({ loggedUser, handleLogout, post }) {
+function PageHeader({ loggedUser, handleLogout }) {
   return (
     <Segment clearing>
       <Header as="h2" floated="right">
@@ -24,8 +24,18 @@ function PageHeader({ loggedUser, handleLogout, post }) {
           ></Image>
         </Link>
       </Header>
+      <br />
+      <br />
+      <Segment>
+      </Segment>
+      <Header as="h2" floated="left">
+        <Link to="https://www.purehockey.com/">
+        Pure Hockey Website
+        </Link>
+      </Header>
+
     </Segment>
-  );
+  )
 }
 
 export default PageHeader;
