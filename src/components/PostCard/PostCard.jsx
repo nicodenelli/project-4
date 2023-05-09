@@ -43,7 +43,7 @@ export default function PostCard({ post, isProfile, loggedUser, addFavorite, rem
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
         <Icon
-          name={"heart"}
+          name={"favorite"}
           size="large"
           color={favoriteColor}
           onClick={clickHandler}
