@@ -40,7 +40,25 @@ async function getFavorites(){
 
   return (
     <Grid>
-      
+      <Grid.Row>
+        <Grid.Column>
+          <PageHeader loggedUser={loggedUser} handleLogout={handleLogout}  />
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row centered>
+        <Grid.Column style={{ maxWidth: 750 }}>
+		{/* <PostDisplay
+            posts={posts}
+            numPhotosCol={3}
+			loggedUser={loggedUser}
+			/> */}
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column>
+          <PageFooter  />
+        </Grid.Column>
+      </Grid.Row>
     </Grid>
   );
 }
