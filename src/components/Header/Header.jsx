@@ -35,7 +35,7 @@ export default function PageHeader({ loggedUser, handleLogout, options }) {
         <Header as="h2" floated="left">
             <a href="https://www.purehockey.com/"><span className="profile-bio-span">Pure Hockey Website</span></a>
         </Header>
-        <List floated='right' link>
+            <List floated='right' link>
                 <List.Item href="/">Home</List.Item>
                 <List.Item href={`/${loggedUser?.username}`}>Profile
                 </List.Item>
