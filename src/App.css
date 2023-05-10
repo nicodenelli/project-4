@@ -9,6 +9,16 @@ body {
   background: darkgray;
 }
 
+/* .content-container {
+  min-height: calc(100vh - 50px);
+}
+
+.footer--pin {
+  position: relative;
+  right: 0;
+  bottom: 0;
+} */
+
 /* 
 .logo {
   height: 6em;

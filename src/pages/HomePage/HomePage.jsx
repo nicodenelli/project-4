@@ -1,4 +1,5 @@
 import PageHeader from "../../components/Header/Header";
+import PageFooter from "../../components/Footer/Footer";
 import PostDisplay from "../../components/PostDisplay/PostDisplay";
 import HockeyForm from "../../components/HockeyForm/HockeyForm";
 
@@ -97,15 +98,15 @@ export default function HomePage({loggedUser, handleLogout}) {
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
+        <Grid.Column style={{ maxWidth: 600 }}>
           <HockeyForm handleAddPost={handleAddPost} />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
+        <Grid.Column style={{ maxWidth: 1250 }}>
           <PostDisplay
             posts={posts}
-            numPhotosCol={1}
+            numPhotosCol={5}
             isProfile={false}
 			loggedUser={loggedUser}
             addFavorite={addFavorite}
@@ -113,6 +114,14 @@ export default function HomePage({loggedUser, handleLogout}) {
           />
         </Grid.Column>
       </Grid.Row>
+      <Grid>
+      <Grid.Row>
+        <Grid.Column>
+            <br />
+          <PageFooter  />
+        </Grid.Column>
+      </Grid.Row>
+      </Grid>
     </Grid>
   );
 }

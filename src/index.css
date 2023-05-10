@@ -1,0 +1,18 @@
+body {
+  background: darkgray;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.content-container {
+  min-height: calc(100vh - 50px);
+}
+
+.footer--pin {
+  position: relative;
+  right: 0;
+  bottom: 0;
+}

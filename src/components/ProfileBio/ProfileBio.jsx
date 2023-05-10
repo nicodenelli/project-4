@@ -23,7 +23,7 @@ export default function ProfileBio({ user }) {
         </Grid.Column>
         <Grid.Column textAlign="left" style={{ maxWidth: 450 }}>
           <Segment vertical>
-            <h3><span className="profile-bio-span">{user.username}</span></h3>
+            <h3>{user.username}</h3>
           </Segment>
           <Segment>
             <span className="profile-bio-span"> Profile Bio: {user.description}</span>

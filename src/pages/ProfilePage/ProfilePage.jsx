@@ -6,6 +6,7 @@ import { Grid } from "semantic-ui-react";
 import ProfileBio from "../../components/ProfileBio/ProfileBio";
 import PostDisplay from "../../components/PostDisplay/PostDisplay";
 import PageHeader from "../../components/Header/Header";
+import PageFooter from "../../components/Footer/Footer";
 import Loader from "../../components/Loader/Loader";
 // we import this in order to call the getProfile function
 // that makes the api call to the backend (express app) in order to get the users
@@ -113,6 +114,11 @@ export default function ProfilePage({loggedUser, handleLogout}) {
             addFavorite={addFavorite}
             removeFavorite={removeFavorite}
 			/>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column>
+          <PageFooter  />
         </Grid.Column>
       </Grid.Row>
     </Grid>
