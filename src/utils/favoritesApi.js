@@ -31,3 +31,14 @@ export function removeFavorite(favoriteId){
 		}
 	}).then(res => res.json())
 }
+
+export function getFavorites(){
+    return fetch(`${BASE_URL}favorites`, {
+        headers: {
+          // convention!
+          // It's always going to Bearer + a space + the jwt token
+          Authorization: 'Bearer ' + tokenService.getToken()
+        }
+      })
+      .then(res => res.json()); 
+}

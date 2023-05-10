@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const favoritesSchema = mongoose.Schema(
   {
   username: String,
-  postId: { type: mongoose.Schema.Types.ObjectId },
-  userId: { type: mongoose.Schema.Types.ObjectId }
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 },
 {
   timestamps: true,

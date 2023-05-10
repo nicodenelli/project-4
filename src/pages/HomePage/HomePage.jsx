@@ -43,6 +43,12 @@ export default function HomePage({loggedUser, handleLogout}) {
       console.log(response, " data");
       // then we update state
       setPosts(response.posts);
+    //   const favoritesPosts = response.posts.filter(post =>
+    //     post.favorites.every(favorite => 
+    //         favorite.userId===loggedUser._id
+    //         )
+    //     )
+            console.log(favoritesPosts, "favoritesPost")
       setLoading(false);
     } catch (err) {
       console.log(err.message, " this is the error in getPosts");

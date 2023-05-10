@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Header, Segment, Image, Icon, List } from "semantic-ui-react";
+import { Header, Segment, Image, Icon, List, Dropdown, Menu } from "semantic-ui-react";
 
-export default function PageHeader({ loggedUser, handleLogout }) {
+export default function PageHeader({ loggedUser, handleLogout, options }) {
   return (
     <Segment clearing>
         <Header as="h2" floated="left">
@@ -39,7 +39,7 @@ export default function PageHeader({ loggedUser, handleLogout }) {
                 <List.Item href="/">Home</List.Item>
                 <List.Item href={`/${loggedUser?.username}`}>Profile
                 </List.Item>
-                <List.Item href={`/${loggedUser?.username}/favorites`}>Favorites</List.Item>
+                <List.Item href={`/favorites`}>Favorites</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
             </List>
     </Segment>

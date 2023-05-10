@@ -9,12 +9,14 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 import userService from './utils/userService';
+import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 
 
 
 export default function App() {
 
   const [user, setUser] = useState(userService.getUser())
+  
 
   function handleSignUpOrLogin(){
     setUser(userService.getUser())
@@ -42,6 +44,12 @@ export default function App() {
         <Route
           path="/signup"
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+        />
+        <Route 
+        path="/favorites"
+        element={
+          <FavoritesPage />
+        }
         />
         <Route
           path="/:username"
