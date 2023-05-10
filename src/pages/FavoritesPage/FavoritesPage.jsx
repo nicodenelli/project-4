@@ -18,10 +18,10 @@ export default function FavoritesPage({loggedUser, handleLogout}) {
 //   const [error, setError] = useState("");
 
   // This is accessing the param in the url, using react router
-  //      <Route path="/:username" element={<ProfilePage />} />
+  //      <Route path="/:username" element={<FavoritesPage />} />
   // username comes from whatever the params name is in the route
-  const { username } = useParams();
-  console.log(username, " <- Username from params");
+//   const { username } = useParams();
+//   console.log(username, " <- Username from params");
 
   useEffect(() => {
  
@@ -31,7 +31,7 @@ async function getFavorites(){
     try {
         const data = await favoritesApi.getFavorites();
         console.log(data)
-        setPosts(data.posts.favorites._id);
+        setPosts(data.posts);
     }catch (err){
         console.log(err)
     }
@@ -47,11 +47,11 @@ async function getFavorites(){
       </Grid.Row>
       <Grid.Row centered>
         <Grid.Column style={{ maxWidth: 750 }}>
-		{/* <PostDisplay
+		<PostDisplay
             posts={posts}
             numPhotosCol={3}
 			loggedUser={loggedUser}
-			/> */}
+			/>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
