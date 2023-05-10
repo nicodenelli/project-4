@@ -39,7 +39,7 @@ export default function PageHeader({ loggedUser, handleLogout }) {
                 <List.Item href="/">Home</List.Item>
                 <List.Item href={`/${loggedUser?.username}`}>Profile
                 </List.Item>
-                <List.Item as='a'>Favorites</List.Item>
+                <List.Item href={`/${loggedUser?.username}/favorites`}>Favorites</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
             </List>
     </Segment>

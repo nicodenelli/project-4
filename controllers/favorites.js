@@ -2,7 +2,8 @@ const Post = require('../models/post')
 
 module.exports = {
     create,
-    deleteFavorite
+    deleteFavorite,
+    favorites
 }
 
 async function create(req, res){
@@ -34,3 +35,22 @@ async function deleteFavorite(req, res){
         res.status(400).json({err})
     }
 }
+
+async function favorites(req, res){
+    try {
+      // First find the user using the params from the request
+      // findOne finds first match, its useful to have unique usernames!
+      const user = await User.findOne({username: req.params.username})
+      // Then find all the posts that belong to that user
+      if(!user) return res.status(404).json({error: 'User not found'})
+  
+      // using the post model to find all the users posts (the user from req.params)
+      // finding all posts by a user, and populating the user property!
+      const posts = await Post.find({user: user._id}).populate("user").exec();
+      console.log(posts, ' this posts')
+      res.status(200).json({posts: posts, user: user})
+    } catch(err){
+      console.log(err)
+      res.status(400).json({err})
+    }
+  }
