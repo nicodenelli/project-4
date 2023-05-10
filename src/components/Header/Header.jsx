@@ -36,10 +36,8 @@ export default function PageHeader({ loggedUser, handleLogout }) {
             <a href="https://www.purehockey.com/"><span className="profile-bio-span">Pure Hockey Website</span></a>
         </Header>
         <List floated='right' link>
-                <List.Item active>Home</List.Item>
-                <List.Item as='a'>Profile
-                    <Link to={`/${loggedUser?.username}`}>
-                    </Link>
+                <List.Item href="/">Home</List.Item>
+                <List.Item href={`/${loggedUser?.username}`}>Profile
                 </List.Item>
                 <List.Item as='a'>Favorites</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
