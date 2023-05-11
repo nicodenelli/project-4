@@ -7,9 +7,11 @@ import HomePage from './pages/HomePage/HomePage';
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from './pages/SignupPage/SignupPage';
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
+import ContactsPage from "./pages/ContactsPage/ContactsPage";
 
 import userService from './utils/userService';
-import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
+
 
 
 
@@ -49,13 +51,19 @@ export default function App() {
         path="/favorites"
         element={
           <FavoritesPage loggedUser={user} handleLogout={handleLogout} />
-        }
+        } 
         />
         <Route
           path="/:username"
           element={
             <ProfilePage loggedUser={user} handleLogout={handleLogout} />
           }
+        />
+        <Route 
+        path="/contacts"
+        element={
+          <ContactsPage />
+        }
         />
       </Routes>
     );
