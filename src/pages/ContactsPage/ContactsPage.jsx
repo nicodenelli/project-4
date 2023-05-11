@@ -7,6 +7,7 @@ export default function ContactsPage(){
     return (
         <>
         <h1>Contact Us!</h1>
+        <br />
         <List>
           <List.Item>Social Media
           <List.Content>
@@ -16,12 +17,12 @@ export default function ContactsPage(){
           </List.Content>
           <br />
           <List.Content>
-            <a href='mailto:ndm9412@gmail.com'>
+            <a href='https://www.instagram.com'>
             <List.Icon name='instagram' />Instagram</a>
           </List.Content>
           <br />
           <List.Content>
-            <a href='mailto:ndm9412@gmail.com'>
+            <a href='https://www.linkedin.com'>
             <List.Icon name='linkedin' />linkedIn</a>
           </List.Content>
           <br />
