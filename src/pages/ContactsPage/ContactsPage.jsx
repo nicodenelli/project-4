@@ -33,7 +33,7 @@ export default function ContactsPage({loggedUser, handleLogout}){
                             </List.Content>
                                 <br />
                             <List.Content>
-                                <a href='https://www.linkedin.com'>
+                                <a target='_blank' href='https://www.linkedin.com'>
                                     <List.Icon name='linkedin' />linkedIn</a>
                             </List.Content>                                               
                             <List.Content>Email

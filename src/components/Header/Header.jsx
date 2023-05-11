@@ -33,31 +33,35 @@ export default function PageHeader({ loggedUser, handleLogout }) {
         <Segment>
         </Segment>
         <Header as="h2" floated="left">
-            <a href="https://www.purehockey.com/"><span className="profile-bio-span">Pure Hockey Website</span></a>
+            <a target='_blank' href="https://www.purehockey.com/"><span className="profile-bio-span">Pure Hockey Website</span></a>
+        </Header>
+        <br />
+        <Header>
+            <a target='_blank' href="https://www.sportsmemorabilia.com/nhl-memorabilia/o-2462+z-944295933-3287975701"><span className="profile-bio-span">Sports Memorabilia</span></a>
         </Header>
             <List floated='right' link>
                 <List.Item>
                 <List.Content>
                     <a href="/">
-                        <List.Icon name='angle double right' />Home</a>
+                        <List.Icon name='angle double right' /><span className="profile-bio-span">Home</span></a>
                 </List.Content>
                 </List.Item>
                 <List.Item>
                 <List.Content>
                     <a href={`/${loggedUser?.username}`}>
-                        <List.Icon name='angle double right' />Profile</a>
+                        <List.Icon name='angle double right' /><span className="profile-bio-span">Profile</span></a>
                 </List.Content>
                 </List.Item>
                 <List.Item>
                 <List.Content>
                     <a href={'/favorites'}>
-                        <List.Icon name='angle double right' />Favorites</a>
+                        <List.Icon name='angle double right' /><span className="profile-bio-span">Favorites</span></a>
                 </List.Content>    
                 </List.Item>
                 <List.Item>
                 <List.Content>
                     <a href={'/contacts'}>
-                        <List.Icon name='angle double right' />Contact Us</a>
+                        <List.Icon name='angle double right' /><span className="profile-bio-span">Contacts</span></a>
                 </List.Content>
                 </List.Item>
             </List>
