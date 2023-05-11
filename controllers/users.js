@@ -39,7 +39,7 @@ async function signup(req, res) {
       res.status(400).json({error: 'Error from aws, check your terminal!'})
     }
 
-    const user = new User({...req.body, photoUrl: data.Location}); // data.Location is the is the url of our image on AWS
+    const user = new User({...req.body, photoSrc: data.Location}); // data.Location is the is the url of our image on AWS
     try {
       await user.save(); // user model .pre('save') will run which hashes our password
       // create our jwt token

@@ -48,7 +48,7 @@ export default function App() {
         <Route 
         path="/favorites"
         element={
-          <FavoritesPage loggedUser={user} />
+          <FavoritesPage loggedUser={user} handleLogout={handleLogout} />
         }
         />
         <Route

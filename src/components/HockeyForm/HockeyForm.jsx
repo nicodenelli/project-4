@@ -27,10 +27,14 @@ export default function HockeyForm({handleAddPost}){
 	}
 
 	return (
+        <>
 		<Segment>
+        <span className="profile-bio-span">Create a New Post!</span>
+        <br />
+        <br />
 			<Form onSubmit={handleSubmit}>
 				<Form.Input 
-					placeholder='Item Details'
+					placeholder='Post Details'
 					required
 					name="caption"
 					onChange={handleChange}
@@ -40,8 +44,9 @@ export default function HockeyForm({handleAddPost}){
 					placeholder="upload image"
 					onChange={handleFileInput}
 				/>
-				<Button type="submit">Add Item</Button>
+				<Button type="submit">Add Post</Button>
 			</Form>
 		</Segment>
+        </>
 	)
 }
