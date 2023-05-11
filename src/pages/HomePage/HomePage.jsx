@@ -4,7 +4,7 @@ import PostDisplay from "../../components/PostDisplay/PostDisplay";
 import HockeyForm from "../../components/HockeyForm/HockeyForm";
 
 import { useState, useEffect } from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Message } from "semantic-ui-react";
 
 // this will import all the functions from postApi, and attach to an object call postsApi
 import * as postsApi from "../../utils/postApi";
@@ -120,14 +120,13 @@ export default function HomePage({loggedUser, handleLogout}) {
           />
         </Grid.Column>
       </Grid.Row>
-      <Grid>
       <Grid.Row>
         <Grid.Column>
-            <br />
+        <Message color='lime green'>
           <PageFooter  />
+        </Message>
         </Grid.Column>
       </Grid.Row>
-      </Grid>
     </Grid>
   );
 }

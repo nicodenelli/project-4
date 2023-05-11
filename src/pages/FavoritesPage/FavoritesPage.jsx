@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 
-import { Grid } from "semantic-ui-react";
+import { Grid, Message } from "semantic-ui-react";
 
 import PostDisplay from "../../components/PostDisplay/PostDisplay";
 import PageHeader from "../../components/Header/Header";
@@ -56,7 +56,9 @@ async function getFavorites(){
       </Grid.Row>
       <Grid.Row>
         <Grid.Column>
+        <Message color='lime green'>
           <PageFooter  />
+        </Message>
         </Grid.Column>
       </Grid.Row>
     </Grid>

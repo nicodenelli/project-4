@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import { Grid } from "semantic-ui-react";
+import { Grid, Message } from "semantic-ui-react";
 
 import ProfileBio from "../../components/ProfileBio/ProfileBio";
 import PostDisplay from "../../components/PostDisplay/PostDisplay";
@@ -118,7 +118,9 @@ export default function ProfilePage({loggedUser, handleLogout}) {
       </Grid.Row>
       <Grid.Row>
         <Grid.Column>
+        <Message color='lime green'>
           <PageFooter  />
+        </Message>
         </Grid.Column>
       </Grid.Row>
     </Grid>

@@ -21,6 +21,7 @@ export default function PageFooter() {
       </List.Item>
     </List>
     <List horizontal>
+      <br />
       <List.Item href='#'>About Us</List.Item>
       <List.Item href='#'>Jobs</List.Item>
     </List>
