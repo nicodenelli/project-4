@@ -16,7 +16,8 @@ const postSchema = new mongoose.Schema(
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     photoSrc: String,
     caption: String,
-    favorites: [favoritesSchema]
+    favorites: [favoritesSchema],
+    cardDate: {type: Date, default: Date.now}
   },
   {
     timestamps: true,

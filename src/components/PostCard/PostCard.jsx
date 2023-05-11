@@ -1,4 +1,4 @@
-import { Card, Image, Icon } from "semantic-ui-react";
+import { Card, Image, Icon, CardDescription } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default function PostCard({ post, isProfile, loggedUser, addFavorite, removeFavorite }) {
@@ -9,6 +9,8 @@ export default function PostCard({ post, isProfile, loggedUser, addFavorite, rem
   );
 
   const favoriteColor = favoritedIndex > -1 ? "red" : "grey";
+  const cardDate = new Date(post.cardDate);
+  const postDate = `${cardDate.toLocaleString('default', { month: 'long' })} ${cardDate.getDate()}, ${cardDate.getFullYear()}`;
 
   const clickHandler =
   favoritedIndex > -1
@@ -40,6 +42,7 @@ export default function PostCard({ post, isProfile, loggedUser, addFavorite, rem
       <Image src={`${post?.photoSrc}`} wrapped ui={false} />
       <Card.Content>
         <Card.Description><span className="profile-bio-span">{post.caption}</span></Card.Description>
+        <Card.Description>{postDate}</Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
         <Icon
