@@ -93,7 +93,7 @@ export default function ProfilePage({loggedUser, handleLogout}) {
   }
 
   return (
-    <Grid>
+    <Grid centered>
       <Grid.Row>
         <Grid.Column>
           <PageHeader loggedUser={loggedUser} handleLogout={handleLogout}  />

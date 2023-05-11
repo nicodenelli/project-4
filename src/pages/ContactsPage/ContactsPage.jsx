@@ -8,12 +8,14 @@ export default function ContactsPage({loggedUser, handleLogout}){
 
     return (
         <>
-        <Grid>
+        <Grid centered>
             <Grid.Row>
                 <Grid.Column>
                     <PageHeader loggedUser={loggedUser} handleLogout={handleLogout}  />
                 </Grid.Column>
             </Grid.Row>
+        </Grid>
+        <Grid>
             <Grid.Row>
                 <Grid.Column>
                     <h1>Contact Us!</h1>

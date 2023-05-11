@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Header, Segment, Image, Icon, List, Dropdown, Menu } from "semantic-ui-react";
+import { Header, Segment, Image, Icon, List } from "semantic-ui-react";
 
-export default function PageHeader({ loggedUser, handleLogout, options }) {
+export default function PageHeader({ loggedUser, handleLogout }) {
   return (
     <Segment clearing>
         <Header as="h2" floated="left">
@@ -36,11 +36,30 @@ export default function PageHeader({ loggedUser, handleLogout, options }) {
             <a href="https://www.purehockey.com/"><span className="profile-bio-span">Pure Hockey Website</span></a>
         </Header>
             <List floated='right' link>
-                <List.Item href="/">Home</List.Item>
-                <List.Item href={`/${loggedUser?.username}`}>Profile
+                <List.Item>
+                <List.Content>
+                    <a href="/">
+                        <List.Icon name='angle double right' />Home</a>
+                </List.Content>
                 </List.Item>
-                <List.Item href={'/favorites'}>Favorites</List.Item>
-                <List.Item href={'/contacts'}>Contact Us</List.Item>
+                <List.Item>
+                <List.Content>
+                    <a href={`/${loggedUser?.username}`}>
+                        <List.Icon name='angle double right' />Profile</a>
+                </List.Content>
+                </List.Item>
+                <List.Item>
+                <List.Content>
+                    <a href={'/favorites'}>
+                        <List.Icon name='angle double right' />Favorites</a>
+                </List.Content>    
+                </List.Item>
+                <List.Item>
+                <List.Content>
+                    <a href={'/contacts'}>
+                        <List.Icon name='angle double right' />Contact Us</a>
+                </List.Content>
+                </List.Item>
             </List>
     </Segment>
   )
