@@ -50,7 +50,8 @@ async function getFavorites(){
 		<PostDisplay
             posts={posts}
             numPhotosCol={3}
-			loggedUser={loggedUser}
+			      loggedUser={loggedUser}
+            isProfile={false}
 			/>
         </Grid.Column>
       </Grid.Row>

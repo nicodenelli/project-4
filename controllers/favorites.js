@@ -41,7 +41,7 @@ async function favorites(req, res){
          
       // using the post model to find all the users posts (the user from req.params)
       // finding all posts by a user, and populating the user property!
-      const posts = await Post.find({'favorites.userId': req.user._id});
+      const posts = await Post.find({'favorites.userId': req.user._id}).populate('user').exec()
       console.log(posts, ' this posts')
       res.status(200).json({posts: posts})
     } catch(err){

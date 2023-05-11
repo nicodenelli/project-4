@@ -110,7 +110,7 @@ export default function ProfilePage({loggedUser, handleLogout}) {
             posts={posts}
             numPhotosCol={3}
             isProfile={true}
-			loggedUser={loggedUser}
+			      loggedUser={loggedUser}
             addFavorite={addFavorite}
             removeFavorite={removeFavorite}
 			/>
