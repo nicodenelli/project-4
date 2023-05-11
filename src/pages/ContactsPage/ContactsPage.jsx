@@ -23,12 +23,12 @@ export default function ContactsPage({loggedUser, handleLogout}){
                         <List.Item>
                         <Message color='lime green'>Social Media
                             <List.Content>
-                                <a href='https://www.facebook.com'>
+                                <a target='_blank' href='https://www.facebook.com'>
                                     <List.Icon name='facebook' />Facebook</a>
                             </List.Content>
                                 <br />
                             <List.Content>
-                                <a href='https://www.instagram.com'>
+                                <a target='_blank' href='https://www.instagram.com'>
                                     <List.Icon name='instagram' />Instagram</a>
                             </List.Content>
                                 <br />
