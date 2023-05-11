@@ -114,7 +114,7 @@ export default function HomePage({loggedUser, handleLogout}) {
             posts={posts}
             numPhotosCol={5}
             isProfile={false}
-			loggedUser={loggedUser}
+			      loggedUser={loggedUser}
             addFavorite={addFavorite}
             removeFavorite={removeFavorite}
           />

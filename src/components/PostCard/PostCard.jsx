@@ -1,4 +1,4 @@
-import { Card, Image, Icon, CardDescription } from "semantic-ui-react";
+import { Card, Image, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export default function PostCard({ post, isProfile, loggedUser, addFavorite, removeFavorite }) {
