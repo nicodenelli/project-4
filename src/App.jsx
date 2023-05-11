@@ -62,7 +62,7 @@ export default function App() {
         <Route 
         path="/contacts"
         element={
-          <ContactsPage />
+          <ContactsPage loggedUser={user} handleLogout={handleLogout} />
         }
         />
       </Routes>
