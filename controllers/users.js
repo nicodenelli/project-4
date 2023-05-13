@@ -11,13 +11,11 @@ module.exports = {
 
 const S3 = require('aws-sdk/clients/s3');
 // initialize the constructor function
-// this object can make requests to our s3 bucket!
+// this object can make requests to the s3 bucket
 const s3 = new S3();
-
-// we'll use the module uuid to generate random names for our aws file
+// use the module uuid to generate random names for the aws file
 const { v4: uuidv4 } = require('uuid')
-
-// our s3 aws bucket from our .env file!
+// s3 aws bucket from .env file
 const BUCKET_NAME = process.env.BUCKET
 
 async function signup(req, res) {
@@ -30,7 +28,7 @@ async function signup(req, res) {
   // create our path of where we want to strore file in our s3 bucket
   const filePath = `project4/${uuidv4()}-${req.file.originalname}`;
   const params = {Bucket: BUCKET_NAME, Key: filePath, Body: req.file.buffer}; // req.file.buffer is the image uploaded from the client
-  // sd.upload to make a request to s3 bucket
+  // s3.upload to make a request to s3 bucket
   s3.upload(params, async function(err, data){
     if(err){
       console.log('===========================================')

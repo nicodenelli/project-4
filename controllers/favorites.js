@@ -9,12 +9,15 @@ module.exports = {
 async function create(req, res){
  
     try {
+         // Find the post to add a favorite to using the id provided in the request
         const post = await Post.findById(req.params.id);
-        post.favorites.push({username: req.user.username, userId: req.user._id}); //mutating a document
-        await post.save()// save it
+        // Add the current user's username and user id to the post's favorites array
+        post.favorites.push({username: req.user.username, userId: req.user._id}); // <- mutating a document
+        await post.save()// save the updated post
+        // If successful will respond with a 201 status and a success message
         res.status(201).json({data: 'favorite added'})
     } catch(err){
-       
+        // If there was an error, respond with a 400 status and the error message
         res.status(400).json({err})
     }
     
@@ -22,8 +25,8 @@ async function create(req, res){
 
 async function deleteFavorite(req, res){
     try {
-        // Find the Post with the favorite, 'favorites._id' and 'favorites.username' comes from the embedded schema
-		// on Post
+        // Find the Post with the favorite
+        // 'favorites._id' and 'favorites.username' comes from the embedded schema on Post
         const post = await Post.findOne({'favorites._id': req.params.id, 'favorites.username': req.user.username});
         post.favorites.remove(req.params.id) // mutating a document
         // req.params.id is the favorite id 
@@ -39,8 +42,7 @@ async function deleteFavorite(req, res){
 async function favorites(req, res){
     try {
          
-      // using the post model to find all the users posts (the user from req.params)
-      // finding all posts by a user, and populating the user property!
+      // using the post model to find all the users favorited posts (the user from req.params) and populating the user property
       const posts = await Post.find({'favorites.userId': req.user._id}).populate('user').exec()
       console.log(posts, ' this posts')
       res.status(200).json({posts: posts})
