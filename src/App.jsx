@@ -21,6 +21,7 @@ export default function App() {
   
 
   function handleSignUpOrLogin(){
+    // get the user data from the userService and set the user state
     setUser(userService.getUser())
   }
 

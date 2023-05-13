@@ -27,16 +27,14 @@ export function create(data){
 }
 
 
-// This function is being called in the HomePage when our useEffect runs when the component loads
+// This function is being called in the HomePage when useEffect runs when the component loads
 // in order to get all the posts
-
-
 export function getAll() {
 	// the return, helps because 
-	// whenever we call getAll, it returns fetch making an api call
+	// whenever calling getAll, it returns fetch - making an api call
 	// if there was no return, fetch would immediatly make the api call when the function is defined
 
-	// we want to wait to make the api call when we want to use getAll (When the HomePage loads)
+	// want to wait to make the api call when wanting to use getAll (When the HomePage loads)
 	return fetch(BASE_URL, {
 	  headers: {
 		// convention!
