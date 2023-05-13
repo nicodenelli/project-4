@@ -1,7 +1,9 @@
 function setToken(token) {
     if (token) {
+      // If a token is provided, set it in local storage
       localStorage.setItem('token', token);
     } else {
+      // if no token provided, remove the token from local storage
       localStorage.removeItem('token');
     }
   }
@@ -22,7 +24,11 @@ function setToken(token) {
   }
   
   function getUserFromToken() {
+    // Retrieve the token from the browser's local storage
     const token = getToken();
+    // If there is a token, decode the token, and parse the decoded token to convert it into an object
+    // and return the user property of the parsed token
+    // if there is no token, return null " : null;"
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
   }
   
