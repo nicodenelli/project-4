@@ -39,15 +39,24 @@ async function deleteFavorite(req, res){
     }
 }
 
+// defines an asynchronous function called favorites that takes two arguments, req and res
 async function favorites(req, res){
     try {
-         
-      // using the post model to find all the users favorited posts (the user from req.params) and populating the user property
+        // Post.find queries the database for all posts that have been favorited by the user with the ID stored in req.user._id, 
+        // and populates .populate() the user field of each post with the corresponding user document.
       const posts = await Post.find({'favorites.userId': req.user._id}).populate('user').exec()
+
       console.log(posts, ' this posts')
+      // sends a JSON response back to the client containing the resulting posts, along with an HTTP status code of 200
       res.status(200).json({posts: posts})
+
     } catch(err){
+
       console.log(err)
       res.status(400).json({err})
     }
   }
+
+
+
+
