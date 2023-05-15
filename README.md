@@ -14,7 +14,7 @@ Online web application which shares many similarities to instagram, just more sp
 
 ## Technologies Used 
 
-MongoDB/Mongoose, Express, React, Node, CSS, HTML, Javascript, AWS
+MongoDB/Mongoose, Express, React, Node, CSS, HTML, Javascript, Semantic UI
 
 ## Screenshots
 
